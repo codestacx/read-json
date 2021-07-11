@@ -1,0 +1,32 @@
+<script>
+
+    /*  1. first add the url to the requested json file */
+    let requestURL = 'products.json';
+
+    /* 
+        2. To create a request, we need to create a new request object instance from the XMLHttpRequest constructor,
+     using the new keyword
+    */
+    let request = new XMLHttpRequest();
+
+    /*
+        3. Now we need to open the request using the open() method. Add the following line
+    */
+    request.open('GET', requestURL);
+
+    /*
+        4. set the response to json so that XHR knows that the server will be returning JSON */
+    request.responseType = 'json';
+    request.send();
+
+    /*
+        5. Once the json is load , get the response 
+    */
+    request.onload = function() {
+        // get the response 
+        const response = request.response;
+        const items    = response.items; //contains the array of objects
+
+        /* use your own business logic to display / process the response */
+    }
+    </script>
